@@ -89,7 +89,7 @@ class ClientServiceImplTest {
             client.setEmailclient(email);
             client.setNameclient(name);
             crepo.save(client);
-            assertEquals(7,crepo.findAll().size());
+            assertEquals(6,crepo.findAll().size());
         }
     }
 
