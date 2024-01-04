@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
 
@@ -9,71 +8,32 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-              git branch: 'master', url: 'pipeline {
-    agent any
-
-    tools {
-        maven 'Maven'
-    }
-
-    stages {
-        stage('Checkout') {
-            steps {
-              git branch: 'master', url: 'https://github.com/adilfettach/craftStore-With-spring-core-testing'
+                git branch: 'master', url: 'https://github.com/adilfettach/craftStore-With-spring-core-testing'
             }
         }
 
         stage('Build') {
             steps {
-                bat 'mvn clean '
+                bat 'mvn clean'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn  test'
+                bat 'mvn test'
             }
         }
-
     }
 
     post {
         success {
             echo 'Build succeeded!'
-
         }
 
         failure {
-             echo 'Build failed!'
-        }
-    }
-}'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                bat 'mvn clean '
-            }
-        }
-
-        stage('Test') {
-            steps {
-                bat 'mvn  test'
-            }
-        }
-
-    }
-
-    post {
-        success {
-            echo 'Build succeeded!'
-
-        }
-
-        failure {
-             echo 'Build failed!'
+            echo 'Build failed!'
         }
     }
 }
+
 
