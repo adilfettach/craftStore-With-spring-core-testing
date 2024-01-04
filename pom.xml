@@ -170,7 +170,7 @@
     <build>
 
         <plugins>
-            <plugin>
+<!--             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
@@ -178,13 +178,14 @@
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                 </configuration>
-            </plugin>
+            </plugin> -->
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.2.2</version>
             <configuration>
-                <!-- Add any necessary configuration here -->
+              <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
             </configuration>
         </plugin>
 
