@@ -8,4 +8,6 @@ import com.joseph.entity.Product;
 @Repository("productRepository")
 public interface ProductRepository extends JpaRepository<Product, Long> {
     Product findByNameproduct(String nameproduct);
+
+  //  Product findFirstByNameproduct(String sss);
 }
