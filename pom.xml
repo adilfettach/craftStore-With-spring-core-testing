@@ -189,6 +189,9 @@
                     <webApp>
                         <contextPath>/spring</contextPath>
                     </webApp>
+                    <httpConnector>
+                        <port>8082</port>
+                    </httpConnector>
                 </configuration>
             </plugin>
 

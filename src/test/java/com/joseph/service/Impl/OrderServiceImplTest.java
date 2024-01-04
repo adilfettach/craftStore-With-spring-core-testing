@@ -99,7 +99,7 @@ class OrderServiceImplTest {
 
 	public void testGetOrder() {
 		Order order = new Order();
-		orderServiceImpl.save(order);
+		orderServiceImpl.saveOrder(order);
 		Order retrievedOrder = orderRepository.findById(order.getIdorder()).orElse(null);
 		assertEquals(order, retrievedOrder);}
 
