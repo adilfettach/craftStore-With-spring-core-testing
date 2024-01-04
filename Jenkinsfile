@@ -4,6 +4,10 @@ pipeline {
     tools {
         maven 'Maven'
     }
+    environment {
+        // Define the Java home directory
+        JAVA_HOME = 'Javahome'
+    }
 
     stages {
         stage('Checkout') {
