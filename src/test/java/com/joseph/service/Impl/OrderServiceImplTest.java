@@ -21,6 +21,7 @@ import com.joseph.config.PersistenceJPAConfig;
 import com.joseph.entity.Client;
 import com.joseph.entity.Order;
 import com.joseph.entity.Status;
+import com.joseph.repository.ClientRepository;
 import com.joseph.repository.OrderRepository;
 
 @ExtendWith(SpringExtension.class)
@@ -31,13 +32,17 @@ class OrderServiceImplTest {
 	@Autowired
 	private OrderRepository orderRepository;
 	@Autowired
+	private ClientRepository clientRepository;
+	@Autowired
 	private OrderServiceImpl orderServiceImpl;
+	Client c;
 
 	@BeforeEach
 	@DisplayName("Setup Tests for Orders")
 	void setupTest() {
-		Client c = new Client();
-		c.setIdclient(1);
+		clientRepository.deleteAll();
+		c = new Client();
+		c = clientRepository.save(c);
 		Order o1 = new Order();
 		o1.setDateorder(LocalDate.now());
 		o1.setStatusorder(Status.INPROGRESS);
@@ -87,10 +92,7 @@ class OrderServiceImplTest {
 	@Test
 	@DisplayName("test save Order")
 	void testSaveOrder() {
-		Client c = new Client();
-		c.setIdclient(1);
 		Order o = new Order();
-		o.setIdorder(1L);
 		o.setDateorder(LocalDate.now());
 		o.setStatusorder(Status.INPROGRESS);
 		o.setClient(c);
@@ -106,8 +108,6 @@ class OrderServiceImplTest {
 		@Test
 		@DisplayName("test get Total Orders Between other Dates")
 		void getorderdate2() {
-			Client c = new Client();
-			c.setIdclient(1);
 			Order o1 = new Order();
 			o1.setDateorder(LocalDate.of(2022, 12, 23));
 			o1.setStatusorder(Status.INPROGRESS);
@@ -146,7 +146,7 @@ class OrderServiceImplTest {
 	@AfterEach
 	@DisplayName("Cleanup Test")
 	void cleanupTest() {
-		orderRepository.deleteAll();
+		clientRepository.deleteAll();
 	}
 
 }

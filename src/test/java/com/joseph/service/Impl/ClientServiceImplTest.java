@@ -1,9 +1,12 @@
 package com.joseph.service.Impl;
 
-import com.joseph.config.PersistenceJPAConfig;
-import com.joseph.entity.Client;
-import com.joseph.repository.ClientRepository;
-import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -12,100 +15,83 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import com.joseph.config.PersistenceJPAConfig;
+import com.joseph.entity.Client;
+import com.joseph.repository.ClientRepository;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {PersistenceJPAConfig.class})
+@ContextConfiguration(classes = { PersistenceJPAConfig.class })
 @Transactional
 class ClientServiceImplTest {
 
-    @Autowired
-    private ClientRepository crepo;
-    @Autowired
-    private ClientServiceImpl srepo;
-    Client client;
+	@Autowired
+	private ClientRepository clientRepository;
+	@Autowired
+	private ClientServiceImpl clientServiceImpl;
+	Client client;
 
-    @BeforeEach
-    void setUp() {
-        client = new Client();
-    }
+	@BeforeEach
+	void setUp() {
+		clientRepository.deleteAll();
+		client = new Client();
+		client.setEmailclient("test@test.com");
+		client.setNameclient("test");
+		clientRepository.save(client);
+		client = new Client();
+		client.setEmailclient("test1@test.com");
+		client.setNameclient("test");
+		clientRepository.save(client);
+		client = new Client();
+		client.setEmailclient("test2@test.com");
+		client.setNameclient("test");
+		clientRepository.save(client);
 
-//
-//    @Test
-//    @DisplayName("Test Return a list of clients")
-//    void getClients() {
-//        assertEquals(16, crepo.findAll().size());
-//    }
-//
-//    @Test
-//    @DisplayName("Test Save a client")
-//   void saveClient() {
-//        Client client = new Client();
-//        client.setEmailclient("test@example.com");
-//        client.setNameclient("adil ye");
-//
-//        Client savedClient = crepo.save(client);
-//
-//        assertEquals(client.getEmailclient(), savedClient.getEmailclient());
-//        assertEquals(client.getNameclient(), savedClient.getNameclient());
-//    }
-//
-//    @Test
-//    @DisplayName("Test Get a client by ID")
-//    void getClient() {
-//        Client client = new Client();
-//        client.setEmailclient("test@example.com");
-//        client.setNameclient("Test Client");
-//
-//        Client savedClient = crepo.save(client);
-//
-//        Client retrievedClient = crepo.findById(savedClient.getIdclient()).orElse(null);
-//
-//        assertNotNull(retrievedClient);
-//        assertEquals(client.getEmailclient(), retrievedClient.getEmailclient());
-//        assertEquals(client.getNameclient(), retrievedClient.getNameclient());
-//    }
-//
-//    @Test
-//    @DisplayName("Test Delete a client by ID")
-//    void deleteClient() {
-//        Client client = new Client();
-//        client.setEmailclient("test@example.com");
-//        client.setNameclient("Test Client");
-//
-//        Client savedClient = crepo.save(client);
-//
-//        crepo.deleteById(savedClient.getIdclient());
-//
-//        assertFalse(crepo.findById(savedClient.getIdclient()).isPresent());
-//    }
-    @Nested
-    @ContextConfiguration(classes = {PersistenceJPAConfig.class})
-    class TestData  {
-        @ParameterizedTest
-        @CsvFileSource(resources = "/data-test.csv")
-        void saveClientWithParameterizedData(String email, String name){
-            client.setEmailclient(email);
-            client.setNameclient(name);
-            srepo.saveClient(client);
-        }
-        @AfterEach
-        void dataBaseSize(){
-            assertEquals(1, crepo.findAll().size());
-        }
-    }
-    @AfterEach
-    void tearDown (){
-        crepo.deleteAll();
-    }
-//    @Test
-//    @DisplayName("Test save a client")
-//    void saveNewClient() {
-//        Client client = new Client();
-//        client.setEmailclient("test@example.com");
-//        client.setNameclient("Test Client");
-//        Client savedClient = crepo.save(client);
-//        assertNotNull(savedClient);
-//    }
+	}
+
+	@Test
+	void TestGetClient() {
+		client = clientRepository.findAll().stream().findFirst().orElse(null);
+		clientServiceImpl.getClient(client.getIdclient());
+	}
+
+	@Test
+	void TestGetClients() {
+		Integer size = clientServiceImpl.getClients().size();
+		assertEquals(3, size);
+	}
+
+	@Test
+	void testSaveClient() {
+		client = new Client();
+		client.setEmailclient("test4@test.com");
+		client.setNameclient("test4");
+		clientServiceImpl.saveClient(client);
+		assertEquals(4, clientRepository.findAll().size());
+	}
+
+	@Test
+	void testDeleteClient() {
+		clientServiceImpl.deleteClient(client.getIdclient());
+		assertEquals(2, clientRepository.findAll().size());
+	}
+
+	@Nested
+	@ContextConfiguration(classes = { PersistenceJPAConfig.class })
+	class parameterizedAndRepetedTest {
+		@ParameterizedTest
+		@CsvFileSource(resources = "/data-test.csv")
+		void saveClientWithParameterizedData(String email, String name) {
+			client.setEmailclient(email);
+			client.setNameclient(name);
+			clientServiceImpl.saveClient(client);
+			assertEquals(3, clientRepository.findAll().size());
+		}
+	}
+
+	@AfterEach
+	@DisplayName("Cleanup Test")
+	void cleanupTest() {
+		clientRepository.deleteAll();
+	}
 
 }
