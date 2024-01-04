@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.time.LocalDate;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -25,14 +26,16 @@ class OrderServiceImplTest {
 	@Autowired
 	private OrderRepository orderRepository;
 
+	@BeforeEach
+	void setuptest() {
+
+	}
+
 	@Test
 	@DisplayName("test save Order")
 	void testSaveOrder() {
 		Client c = new Client();
-		c.setNameclient("yassine");
 		c.setIdclient(1);
-		c.setEmailclient("yassine@gmail.com");
-
 		Order o = new Order();
 		o.setIdorder(1L);
 		o.setDateorder(LocalDate.now());
