@@ -1,2 +1,3 @@
 com\joseph\service\Impl\ClientServiceImplTest.class
 com\joseph\service\Impl\OrderServiceImplTest.class
+com\joseph\service\Impl\ProductServiceImplTest.class
