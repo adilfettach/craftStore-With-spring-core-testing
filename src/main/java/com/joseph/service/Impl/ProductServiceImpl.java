@@ -46,6 +46,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product geProductsByName(String name) {
         return productRepository.findByNameproduct(name);
+
     }
 
 }

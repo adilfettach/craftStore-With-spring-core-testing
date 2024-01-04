@@ -7,7 +7,7 @@ import com.joseph.entity.Product;
 public interface ProductService {
     public List<Product> getProducts();
 
-    public void saveProduct(Product Product);
+        public void saveProduct(Product Product);
 
     public Product getProduct(Long id);
 
