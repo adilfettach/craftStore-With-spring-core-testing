@@ -5,10 +5,6 @@ pipeline {
         maven 'Maven'
         jdk 'Javahome'
     }
-    environment {
-        // Define the Java home directory
-        JAVA_HOME = 'C:\Program Files\Java\jdk-1.8'
-    }
 
     stages {
         stage('Checkout') {
