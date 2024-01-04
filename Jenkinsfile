@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven'
+        jdk 'Javahome'
     }
     environment {
         // Define the Java home directory
