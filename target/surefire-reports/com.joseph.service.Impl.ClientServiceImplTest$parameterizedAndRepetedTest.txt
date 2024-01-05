@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.442 s - in com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest
-com.joseph.service.Impl.ClientServiceImplTest.testDeleteClient  Time elapsed: 0.908 s
-com.joseph.service.Impl.ClientServiceImplTest.testSaveClient  Time elapsed: 0.067 s
-com.joseph.service.Impl.ClientServiceImplTest.TestGetClients  Time elapsed: 0.044 s
-com.joseph.service.Impl.ClientServiceImplTest.TestGetClient  Time elapsed: 0.039 s
-com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[1]  Time elapsed: 0.159 s
-com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[2]  Time elapsed: 0.08 s
-com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[3]  Time elapsed: 0.084 s
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.437 s - in com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest
+com.joseph.service.Impl.ClientServiceImplTest.testDeleteClient  Time elapsed: 0.281 s
+com.joseph.service.Impl.ClientServiceImplTest.testSaveClient  Time elapsed: 0.077 s
+com.joseph.service.Impl.ClientServiceImplTest.TestGetClients  Time elapsed: 0.061 s
+com.joseph.service.Impl.ClientServiceImplTest.TestGetClient  Time elapsed: 0.047 s
+com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[1]  Time elapsed: 0.155 s
+com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[2]  Time elapsed: 0.073 s
+com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest.saveClientWithParameterizedData(String, String)[3]  Time elapsed: 0.091 s

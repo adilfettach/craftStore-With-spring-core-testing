@@ -1,10 +1,10 @@
 -------------------------------------------------------------------------------
 Test set: com.joseph.service.Impl.OrderServiceImplTest$rapports
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.238 s - in com.joseph.service.Impl.OrderServiceImplTest$rapports
-com.joseph.service.Impl.OrderServiceImplTest.getOrders  Time elapsed: 0.289 s
-com.joseph.service.Impl.OrderServiceImplTest.testdeleteOrder  Time elapsed: 0.147 s
-com.joseph.service.Impl.OrderServiceImplTest.testSaveOrder  Time elapsed: 0.074 s
-com.joseph.service.Impl.OrderServiceImplTest.getOrder  Time elapsed: 0.088 s
-com.joseph.service.Impl.OrderServiceImplTest$rapports.getorderdate1  Time elapsed: 0.124 s
-com.joseph.service.Impl.OrderServiceImplTest$rapports.getorderdate2  Time elapsed: 0.101 s
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.249 s - in com.joseph.service.Impl.OrderServiceImplTest$rapports
+com.joseph.service.Impl.OrderServiceImplTest.getOrders  Time elapsed: 0.249 s
+com.joseph.service.Impl.OrderServiceImplTest.testdeleteOrder  Time elapsed: 0.104 s
+com.joseph.service.Impl.OrderServiceImplTest.testSaveOrder  Time elapsed: 0.073 s
+com.joseph.service.Impl.OrderServiceImplTest.getOrder  Time elapsed: 0.1 s
+com.joseph.service.Impl.OrderServiceImplTest$rapports.getorderdate1  Time elapsed: 0.126 s
+com.joseph.service.Impl.OrderServiceImplTest$rapports.getorderdate2  Time elapsed: 0.106 s

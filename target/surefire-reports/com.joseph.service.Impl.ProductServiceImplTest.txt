@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.joseph.service.Impl.ProductServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s - in com.joseph.service.Impl.ProductServiceImplTest
-com.joseph.service.Impl.ProductServiceImplTest.testGetProductByName  Time elapsed: 0.077 s
-com.joseph.service.Impl.ProductServiceImplTest.testDeleteProducts  Time elapsed: 0.035 s
-com.joseph.service.Impl.ProductServiceImplTest.testGetProduct  Time elapsed: 0.023 s
-com.joseph.service.Impl.ProductServiceImplTest.testGetProducts  Time elapsed: 0.039 s
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s - in com.joseph.service.Impl.ProductServiceImplTest
+com.joseph.service.Impl.ProductServiceImplTest.testGetProductByName  Time elapsed: 0.069 s
+com.joseph.service.Impl.ProductServiceImplTest.testDeleteProducts  Time elapsed: 0.028 s
+com.joseph.service.Impl.ProductServiceImplTest.testGetProduct  Time elapsed: 0.015 s
+com.joseph.service.Impl.ProductServiceImplTest.testGetProducts  Time elapsed: 0.026 s
