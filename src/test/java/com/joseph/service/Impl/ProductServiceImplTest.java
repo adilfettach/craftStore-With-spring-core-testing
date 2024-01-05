@@ -62,6 +62,14 @@ class ProductServiceImplTest {
      }
 
      @Test
+     @DisplayName("Test delete product")
+     void testDeleteProducts() {
+         productTest = productRepository.findAll().stream().findFirst().orElse(null);
+         productService.deleteProduct(productTest.getIdproduct());
+         assertEquals(0,productRepository.findAll().size());
+     }
+
+     @Test
      @DisplayName("Test get product by name")
      void testGetProductByName() {
          Product retrievedProduct = productService.geProductsByName(productTest.getNameproduct());

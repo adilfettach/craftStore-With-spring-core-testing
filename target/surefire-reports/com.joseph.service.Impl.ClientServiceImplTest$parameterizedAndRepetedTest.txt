@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.508 s -- in com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.771 s -- in com.joseph.service.Impl.ClientServiceImplTest$parameterizedAndRepetedTest

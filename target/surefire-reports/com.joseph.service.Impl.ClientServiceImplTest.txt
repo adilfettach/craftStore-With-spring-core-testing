@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.joseph.service.Impl.ClientServiceImplTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.748 s -- in com.joseph.service.Impl.ClientServiceImplTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.149 s -- in com.joseph.service.Impl.ClientServiceImplTest
