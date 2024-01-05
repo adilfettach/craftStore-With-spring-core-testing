@@ -31,6 +31,7 @@ class ClientServiceImplTest {
 	Client client;
 
 	@BeforeEach
+	@DisplayName("Setup Tests for Client")
 	void setUp() {
 		clientRepository.deleteAll();
 		client = new Client();
@@ -49,18 +50,21 @@ class ClientServiceImplTest {
 	}
 
 	@Test
+	@DisplayName("Test Get Client")
 	void TestGetClient() {
 		client = clientRepository.findAll().stream().findFirst().orElse(null);
 		clientServiceImpl.getClient(client.getIdclient());
 	}
 
 	@Test
+	@DisplayName("Test Get Clients")
 	void TestGetClients() {
 		Integer size = clientServiceImpl.getClients().size();
 		assertEquals(3, size);
 	}
 
 	@Test
+	@DisplayName("Test Save Client")
 	void testSaveClient() {
 		client = new Client();
 		client.setEmailclient("test4@test.com");
@@ -70,6 +74,7 @@ class ClientServiceImplTest {
 	}
 
 	@Test
+	@DisplayName("Test Delete Client")
 	void testDeleteClient() {
 		clientServiceImpl.deleteClient(client.getIdclient());
 		assertEquals(2, clientRepository.findAll().size());
@@ -79,6 +84,7 @@ class ClientServiceImplTest {
 	@ContextConfiguration(classes = { PersistenceJPAConfig.class })
 	class parameterizedAndRepetedTest {
 		@ParameterizedTest
+		@DisplayName("Test save clients from csv")
 		@CsvFileSource(resources = "/data-test.csv")
 		void saveClientWithParameterizedData(String email, String name) {
 			client.setEmailclient(email);
