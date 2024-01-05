@@ -15,7 +15,8 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean'
+               bat(script: 'C:\\Windows\\System32\\cmd.exe /c mvn clean')
+
             }
         }
 
