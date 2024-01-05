@@ -5,9 +5,7 @@ pipeline {
         maven 'Maven'
         jdk 'Javahome'
     }
- environment {
-     env.PATH = env.PATH + ";c:\\Windows\\System32"
- }
+
     stages {
         stage('Checkout') {
             steps {
