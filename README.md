@@ -1,34 +1,42 @@
-# CraftStore
-This application allows you to manage customer orders, products, and clients. It provides the ability to add new orders, track the progress of ongoing orders, and mark orders as complete once they are processed.
 
-Cette application permet de gérer les commandes clients, les produits et les clients. Elle offre la possibilité d'ajouter de nouvelles commandes, de suivre l'état d'avancement des commandes en cours et de marquer les commandes comme complètes une fois qu'elles sont traitées.
-## technologie utilisée.
-```diff
-+ Langage de Programmation : Java
-+ Frontend : Thymeleaf pour les vues dynamiques
-+ Backend : Spring Core ( IOC , DI ) - Spring MVC - Hibernate - Spring Data JPA
-+ Gestion de Dépendances : Apache Maven
-+ Base de Données : MySQL
-+ Serveur d'Application : Apache Tomcat
-```
+# OrderCraft- Application de Gestion des Commandes d'ArtWood
 
-## Diagramme de classes
-![alt text](https://imagizer.imageshack.com/v2/1024x768q70/922/rdQQQ9.png)
+## Description
+Ce projet est une application de gestion des commandes développée pour l'entreprise artisanale ArtWood. Elle a été migrée depuis une technologie Java EE (JSP, Servlets) vers une architecture moderne et évolutive basée sur Spring Core MVC avec Thymeleaf.
 
-## Diagramme de cas d'utilisation
-![alt text](https://imagizer.imageshack.com/v2/1024x768q70/922/3HZogx.png)
+## Fonctionnalités
 
-# Fonctionnalités de l'Application "CraftStore" (Spring Core) pour la Gestion des Commandes
-
-# Gérer les produits, vous pouvez ajouter, supprimer, mettre à jour toutes les informations et consulter tous les produits :
-
-# Gérer les clients, vous pouvez ajouter, supprimer et consulter tous les clients
+1. **Ajout de Commandes**
 
 
-# Gérer les commandes, vous pouvez ajouter, supprimer, modifier le statut de la commande et consulter toutes les commandes
+2. **Visualisation des Commandes**
+  
 
-# modifier le statut de la commande : 🟧`INPROGRESS`, 🟩`DELIVRED`, 🟥`CANCELED`
+3. **Validation des commandes**
 
-# Afficher les détails d'une commande.
-## Authors
-- [@yassinjouao](https://github.com/yassinjouao)
+
+4. **Gestion des Clients**
+
+
+5. **Suivi des Stocks**
+
+6. **Gestion des produits**
+    
+ 7. **Rapports d'Analyse des Ventes**
+
+
+
+
+## Stack Technique
+
+- **Langage de Programmation:** Java
+- **Frontend:**  Thymeleaf pour les vues dynamiques
+- **Backend:** spring Core (IOC, DI) - Spring MVC - Hibernate - Spring Data JPA 
+- **Gestion de Dépendances:** Apache Maven
+- **Base de Données:** MySQL
+- **Serveur d'Application:** Jetty
+- **Test:** Junit jupiter 
+- **Intégration continue:** Jenkins
+- **Logging:** SLF4J (Simple Logging Facade for Java) pour la gestion des journaux
+
+
