@@ -74,7 +74,7 @@ class ProductServiceImplTest {
      void testGetProductByName() {
          Product retrievedProduct = productService.geProductsByName(productTest.getNameproduct());
          assertNotNull(retrievedProduct);
-         assertEquals(productTest.getNameproduct(), retrievedProduct.getNameproduct());
+         assertEquals(productTest.getNameproduct() + "test", retrievedProduct.getNameproduct());
          assertEquals(productTest.getPriceproduct(), retrievedProduct.getPriceproduct());
          assertEquals(productTest.getStockproduct(), retrievedProduct.getStockproduct());
      }
